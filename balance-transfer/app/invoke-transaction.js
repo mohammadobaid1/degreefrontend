@@ -90,7 +90,7 @@ var invokeChaincode = async function(peerNames, channelName, chaincodeName, fcn,
 						let message = 'REQUEST_TIMEOUT:' + eh.getPeerAddr();
 						logger.error(message);
 						eh.disconnect();
-					}, 3000);
+					}, 6000);
 					eh.registerTxEvent(tx_id_string, (tx, code, block_num) => {
 						logger.info('The chaincode invoke chaincode transaction has been committed on peer %s',eh.getPeerAddr());
 						logger.info('Transaction %s has status of %s in blocl %s', tx, code, block_num);
@@ -114,7 +114,7 @@ var invokeChaincode = async function(peerNames, channelName, chaincodeName, fcn,
 						// so no real need to set here, however for 'disconnect'
 						// the default is false as most event hubs are long running
 						// in this use case we are using it only once
-						{unregister: true, disconnect: true}
+						{unregister: true, disconnect: false}
 					);
 					eh.connect();
 				});

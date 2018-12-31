@@ -1,8 +1,8 @@
 {
    "host":"localhost",
    "port":"4000",
-   "jwt_expiretime": "36000",
-   "channelName":"mychannel",
+   "jwt_expiretime": "360000000",
+   "channelName":"obaid",
    "CC_SRC_PATH":"../artifacts",
    "eventWaitTime":"30000",
    "admins":[
@@ -12,3 +12,5 @@
       }
    ]
 }
+
+

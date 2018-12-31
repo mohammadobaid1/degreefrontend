@@ -1,0 +1,25 @@
+version : "3"
+
+services:
+   nodeapp:
+     image: mohammadobaid/node-app
+     networks:
+       - fabric
+     ports:
+       - 8080:4000 
+     deploy:
+        placement:
+           constraints: [node.hostname == ip-172-31-86-95]
+
+
+
+
+
+
+
+
+networks:
+   fabric:
+      external: true
+
+
